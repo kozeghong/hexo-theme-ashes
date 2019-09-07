@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <%
+  <%_
   var title = page.title;
 
   if (is_home()) {
@@ -28,12 +28,23 @@
     title += ' - ' + config.title
 
   }
-  %>
-  <title><% if (title){ %><%= title %><% } %></title>
+  _%>
+  <title><%_ if (title){ _%><%= title %><%_ } _%></title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <% if (config.highlight.enable){ %>
+  <%_ if (config.highlight.enable){ _%>
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <% } %>
-  <%- css('css/style') %>
+  <%_ } _%>
+  <%- css('css/style') _%>
+  <%_ if (theme.baidu_analytics) { _%>
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?<%= theme.baidu_analytics _%>";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+  <%_ } _%>
 </head>
