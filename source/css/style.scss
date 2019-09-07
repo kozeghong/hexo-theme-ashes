@@ -1,0 +1,409 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+a {
+    color: #000;
+}
+
+html {
+  font-family: serif;
+  font-size: 10px;
+}
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  max-width: 855px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.site {
+  position: relative;
+  overflow: hidden;
+}
+
+.header {
+  position: fixed;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px 0px;
+  width: 100%;
+  z-index: 999;
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    padding: 0 3px;
+  }
+
+  .branding {
+  flex: 1;
+  font-size: 2.8rem;
+  letter-spacing: 3px;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .nav {
+    display: flex;
+    justify-content: flex-end;
+    flex: 2;
+    font-size: 1.6rem;
+
+    a {
+      letter-spacing: 1px;
+      margin-left: 18px;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #666;
+    }
+  }
+
+}
+
+
+.main {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin-top: 80px;
+}
+
+.main .wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.main .wrapper .row .post {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.main .wrapper .row .post .post-image {
+  width: 100%;
+  height: auto;
+}
+
+.main .wrapper .row .post .post-image img {
+  width: 100%;
+  height: auto;
+}
+
+.main .wrapper .row .post .post-title {
+  position: relative;
+  overflow: hidden;
+  margin: 5px 0 2px;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.main .wrapper .row .post .post-title a {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  padding: 3px 0;
+  text-decoration: none;
+  color: #000;
+}
+
+.main .wrapper .row .post .post-meta {
+  margin: 5px 0;
+  padding: 0 2px;
+  font-family: sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  color: #999;
+}
+
+.main .wrapper .row .post .post-abstract {
+  font-size: 1.4rem;
+  line-height: 180%;
+  color: #333;
+}
+
+// one column begin
+
+.main .wrapper.one-column .row {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+}
+
+.main .wrapper.one-column .row .post {
+  flex: 1;
+  margin-bottom: 58px;
+}
+
+.main .wrapper.one-column .row .post.landscape {
+  flex: 1;
+}
+
+.main .wrapper.one-column .row .post.portrait {
+  flex: 1;
+}
+
+.main .wrapper.one-column .row .post .post-abstract {
+  font-size: 1.6rem;
+}
+
+// one column end
+
+// grid layout begin
+
+.main .wrapper.grid-layout .row {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  margin-bottom: 58px;
+}
+
+.main .wrapper.grid-layout .row .post {
+  flex: 4;
+  margin-right: 28px;
+}
+
+.main .wrapper.grid-layout .row .post:last-child {
+  margin-right: 0;
+}
+
+.main .wrapper.grid-layout .row .post.landscape {
+  flex: 9;
+}
+
+.main .wrapper.grid-layout .row .post.portrait {
+  flex: 4;
+}
+
+.main .wrapper.grid-layout .row .post .post-title {
+  font-size: 1.4rem;
+}
+
+.main .wrapper.grid-layout .row .post .post-meta {
+  font-size: 1.1rem;
+}
+
+.main .wrapper.grid-layout .row .post .post-abstract {
+  font-size: 1.2rem;
+}
+
+// grid layout end
+
+// page-navi begin
+
+.page-navi {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin: 38px 0;
+}
+
+.page-navi .wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-navi .wrapper span,
+.page-navi .wrapper a {
+  padding: 3px;
+  margin: 5px;
+  font-size: 1.6rem;
+  text-decoration: underline;
+  color: #999;
+}
+
+.page-navi .wrapper span {
+  text-decoration: none;
+}
+
+// page-navi end
+
+// post-content begin
+
+.post-content {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin: 80px 0 88px;
+}
+
+.post-content .wrapper {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.post-content .wrapper .post-header {
+  display: flex;
+  flex-flow: column nowrap;
+
+  .post-image {
+    width: 100%;
+    height: auto;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+  }
+
+  .post-title {
+    position: relative;
+    overflow: hidden;
+    margin: 5px 0 2px;
+    font-weight: bold;
+    font-size: 2.4rem;
+
+    a {
+      display: block;
+      overflow: hidden;
+      width: 100%;
+      padding: 3px 0;
+      text-decoration: none;
+      color: #000;
+    }
+  }
+
+  .post-meta {
+    margin: 5px 0;
+    padding: 0 2px;
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    color: #999;
+  }
+
+}
+
+.post-content .wrapper .post-body {
+  font-size: 1.6rem;
+  line-height: 180%;
+  color: #333;
+  margin-bottom: 28px;
+}
+
+.post-content .wrapper .post-footer {
+  font-family: sans-serif;
+  font-size: 1.4rem;
+  line-height: 180%;
+  color: #333;
+
+  .post-navi {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    
+  }
+
+}
+
+
+// post-content end
+
+// archive begin
+
+.archives {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin-top: 80px;
+
+  .wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+
+    .archives-group {
+      margin-bottom: 28px;
+      
+      h2 {
+        font-size: 2.2rem;
+        line-height: 180%;
+      }
+      ul {
+        li {
+          font-size: 1.8rem;
+          line-height: 180%;
+        }
+      }
+    }
+  }
+}
+
+// archive end
+
+.footer {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 68px 0;
+  font-family: sans-serif;
+  font-size: 1.2rem;
+  text-align: center;
+  background: #7f7f7f;
+  color: #f7f7f7;
+}
+
+@media (max-width: 855px) {
+  .wrapper, .header .wrapper {
+    padding: 0 5%;
+  }
+}
+
+@media (max-width: 500px) {
+  .header .nav {
+    display: none;
+  }
+}
+
+// post-content
+
+.post-content .wrapper .post-body {
+
+  font-size: 1.6rem;
+
+  p, h2, h3, h4, h5, h6 {
+    margin: 0 0 1.6rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    &::before {
+      content: "#";
+      margin-right: 5px;
+    }
+  }
+
+  h3 {
+    font-size: 1.8rem;
+    &::before {
+      content: "##";
+      margin-right: 5px;
+    }
+  }
+
+  code,
+  pre {
+    padding: 8px;
+    font-size: 1.2rem;
+    font-family: Consolas, Monaco, Menlo, Consolas, monospace;
+    word-break: break-all;
+    word-wrap: break-word;
+  }
+
+  ul {
+    margin-left: 2em;
+  }
+
+  figure {
+    text-align: center;
+  }
+
+}

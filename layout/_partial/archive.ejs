@@ -1,0 +1,88 @@
+<%_ if (is_home()){ _%>
+<div class="main">
+  <div class="wrapper one-column">
+
+    <%_ page.posts.each(function(post, post_index){ _%>
+
+    <%_ if (post_index % 2 == 0) { _%><div class="row"><%_ } _%>
+
+      <div class="post">
+        <%_ if (post.cover) { _%><div class="post-image"><img src="" alt=""></div><%_ } _%>
+        <%_ if (post.link || post.title){ _%>
+        <div class="post-title">
+          <%- partial('post/title', {class_name: 'article-title', post: post}) _%>
+        </div>
+        <%_ } _%>
+        <div class="post-meta">
+          <%- partial('post/date', {class_name: 'article-date', date_format: null, post: post}) _%>
+          <%- partial('post/category', {post: post}) _%>
+          <%- partial('post/tag', {post: post}) _%>
+        </div>
+        <div class="post-abstract">
+          <%_
+          var post_abstract = '';
+          if (post.excerpt){
+            post_abstract = post.excerpt;
+          } else if (post.content) {
+            var br = 0;
+            for (var i = 0; i < 5; ++i) {
+            br = post.content.indexOf('\n',br+1);
+              if (br<0 || br >150) {
+                break;
+              }
+            }
+            if (br < 0) {
+              post_abstract = post.content 
+            } else { 
+              post_abstract = post.content.substring(0, br) 
+            }
+          }
+          _%>
+          <%- post_abstract _%>
+        </div>
+      </div>
+
+      <%_ if (post_index % 2 == 1) { _%></div><%_ } _%>
+
+    <%_ }) _%>
+
+  </div>
+</div>
+
+<%_ } else { _%>
+
+<div class="archives">
+  <div class="wrapper">
+
+    <%_ 
+    var postsByYear = _.groupBy(page.posts.toArray(), function (p) { return p.date.format('YYYY') })
+    _.keys(postsByYear).reverse().forEach(function(year){
+    _%>
+    <div class="archives-group">
+      <h2><a href="<%- url_for(config.archive_dir + '/' + year) _%>"><%= year _%></a></h2>
+      <ul>
+        <%_ postsByYear[year].forEach(function(post){ _%>
+        <li>
+          <%- partial('post/date', {class_name: 'archive-article-date', date_format: 'MMM D', post: post}) %>
+          <%- partial('post/title', {class_name: 'archive-article-title', post: post}) %>
+        </li>
+        <%_ }); _%>
+      </ul>
+    </div>
+    <%_ }); _%>
+  </div>
+</div>
+
+<%_ } _%>
+
+<%_ if (page.total > 1){ _%>
+<%_ var prev_text = "&laquo; " + __('prev');var next_text = __('next') + " &raquo;"%>
+<div class="page-navi">
+  <div class="wrapper">
+    <%- paginator({
+      prev_text: prev_text,
+      next_text: next_text
+    }) _%>
+  </div>
+</div>
+<%_ } _%>
