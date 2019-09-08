@@ -24,11 +24,11 @@
       <div class="post-navi">
         <span lass="prev">
           <%_ if (post.prev){ _%>
-          <%= __('newer') %>:&nbsp;<a href="<%- url_for(post.prev.path) %>"><%= post.prev.title %></a>
+          <%= __('newer') %>&nbsp;<a href="<%- url_for(post.prev.path) %>"><%= post.prev.title %></a>
           <%_ } _%>
         </span>
         <%_ if (post.next){ _%>
-        <span class="next"><%= __('older') %>:&nbsp;<a
+        <span class="next"><%= __('older') %>&nbsp;<a
             href="<%- url_for(post.next.path) %>"><%= post.next.title %></a></span>
         <%_ } _%>
       </div>

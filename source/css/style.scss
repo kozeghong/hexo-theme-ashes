@@ -300,7 +300,20 @@ html {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    
+      span {
+        font-size: 1.2rem;
+        color: #999;
+
+        a {
+          display: block;
+          font-size: 1.4rem;
+          color: #000;
+        }
+
+        &.next {
+          text-align: right;
+        }
+      }
   }
 
 }
