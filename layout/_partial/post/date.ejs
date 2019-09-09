@@ -1,1 +1,4 @@
+<%_
+  date_format = date_format || 'dddd, d MMM YYYY'
+_%>
 <time datetime="<%= date_xml(post.date) %>"><%= date(post.date, date_format) %></time>
