@@ -1,9 +1,10 @@
 <% if (post.tags && post.tags.length){ %>
 <div class="post-tags">
+  <% var amount = is_post() ? 0 : 5 %>
   <%- list_tags(post.tags, {
     show_count: false,
     class: 'post-tags',
-    amount: 5,
+    amount: amount,
   }) %>
 </div>
 <% } %>

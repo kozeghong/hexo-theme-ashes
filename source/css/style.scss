@@ -160,6 +160,7 @@ html {
       }
     }
   }
+  
 }
 
 .main .wrapper .row .post .post-abstract {
@@ -314,12 +315,27 @@ html {
   }
 
   .post-meta {
+    display: flex;
+    flex-flow: row nowrap;
     margin: 5px 0;
     padding: 0 2px;
     font-family: sans-serif;
     font-size: 1.2rem;
     letter-spacing: 1px;
     color: #999;
+
+    .post-category {
+      margin-left: 12px;
+
+      a {
+        color: #999;
+
+        &:hover {
+          color: #333;
+        }
+      }
+    }
+
   }
 
 }
@@ -329,7 +345,7 @@ html {
   line-height: 180%;
   color: #333;
   margin-top: 38px;
-  margin-bottom: 58px;
+  margin-bottom: 38px;
 }
 
 .post-content .wrapper .post-footer {
@@ -342,6 +358,7 @@ html {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+    letter-spacing: 1px;
       span {
         font-size: 1.2rem;
         color: #999;
@@ -356,6 +373,37 @@ html {
           text-align: right;
         }
       }
+  }
+
+  .post-tags {
+    margin-bottom: 38px;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+
+    ul {
+      display: flex;
+      flex-flow: row nowrap;
+
+      li {
+        list-style: none;
+        margin-right: 0.5rem;
+
+        a {
+          padding: 2px 6px;
+          background-color: #f5f5f5;
+          color: #666;
+          text-decoration: none;
+
+          &:hover {
+            color: #333;
+          }
+
+          &::before {
+            content: '#';
+          }
+        }
+      }
+    }
   }
 
 }
