@@ -8,10 +8,12 @@
         <%- partial('post/title', {class_name: 'article-title', post: post}) _%>
       </h1>
       <%_ } _%>
+      <%_ if (is_post()) { _%>
       <div class="post-meta">
         <%- partial('post/date', {class_name: 'article-date', date_format: null, post: post}) _%>
         <%- partial('post/category', {post: post}) _%>
       </div>
+      <%_ } _%>
     </div>
 
     <div class="post-body">
