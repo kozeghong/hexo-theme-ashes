@@ -53,7 +53,24 @@
 
 <div class="archives">
   <div class="wrapper">
+    <%_
+    var archives_title
+    if (is_archive()) {
+      archives_title = __('archive_a');
 
+      if (is_month()) {
+        archives_title += ': ' + page.year + '/' + page.month;
+      } else if (is_year()) {
+        archives_title += ': ' + page.year;
+      }
+
+    } else if (is_category()) {
+      archives_title = __('category') + ': ' + page.category;
+    } else if (is_tag()) {
+      archives_title = __('tag') + ': ' + page.tag;
+    }
+    _%>
+    <h1><%= archives_title _%></h1>
     <%_ 
     var postsByYear = _.groupBy(page.posts.toArray(), function (p) { return p.date.format('YYYY') })
     _.keys(postsByYear).reverse().forEach(function(year){
